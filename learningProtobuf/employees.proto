@@ -38,7 +38,7 @@ and there will be a function called serializeBinary() in the class. it will conv
 and there will be a function called deserializeBinary() in the class. it will convert the binary format to the message.
 */
 message Employees {
-    repeated Employee employees = 1; // repeated means it is an array. it is used to set the array of employees in
+    repeated Employee employees = 1; // repeated means it is an array. it is used to set the array of Employee in the message.
 }
 
 
