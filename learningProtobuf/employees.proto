@@ -1,0 +1,38 @@
+/*
+proto file:
+a proto file is a file that contains the definition of the messages
+that we want to send across the network.
+*/
+
+
+syntax = "proto3";
+
+message Employee {
+    int32 id = 1; // Unique ID number for employee
+    string name = 2; // Full name of employee
+    float salary = 3; // Salary of employee
+}
+/*
+the type of the field is the type of the message.
+and the number is the tag number. it will be used to identify the field
+in the message binary format.
+*/
+
+message Employees {
+    repeated Employee employees = 1;
+}
+
+
+// to create the js file from the proto file
+// npm install -g protoc-gen-js
+// npm audit fix --force
+/*
+before running the below command, need to install the protoc compiler.
+github.com/protocolbuffers/protobuf/releases. download the zip file and extract it.
+then add the bin folder to the path. if not added to the path, then need to give the full path of the protoc compiler in the below command.
+like this: C:\Users\user\Downloads\protoc-3.17.3-win64\bin\protoc.exe --js_out=import_style=commonjs,binary:. ./employees.proto
+*/
+// protoc --js_out=import_style=commonjs,binary:. ./employees.proto
+// after these commands, a js file will be created in the same directory
+// after that need to install the google-protobuf package
+// npm install google-protobuf
