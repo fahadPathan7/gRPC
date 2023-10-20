@@ -18,8 +18,27 @@ and the number is the tag number. it will be used to identify the field
 in the message binary format.
 */
 
+/*
+this is the message that we want to send across the network. so we need to
+define the message in the proto file. it will be converted to the js file. there will be a function called serializeBinary() in the js file.
+it will convert the message to the binary format. and there will be a function called deserializeBinary() in the js file.
+it will convert the binary format to the message.
+
+in the employees_pb.js (protobuf) file, there will be a class called Employee. it will have the serializeBinary() and deserializeBinary() functions.
+and there will be a class called Employees. it will have the serializeBinary() and deserializeBinary() functions.
+and it will have a function called addEmployees(). it will add the employees to the array of employees.
+and there will be a function called clearEmployees(). it will clear the array of employees.
+and there will be a function called getEmployeesList(). it will return the array of employees.
+
+binary means 0s and 1s. it is the format that we send across the network. server will convert the message to the binary format and send it to the client.
+client will convert the binary format to the message and use it. it is like json. but it is more efficient than json.
+
+for every message, there will be a class in the js file. and for every field, there will be a function in the class.
+and there will be a function called serializeBinary() in the class. it will convert the message to the binary format.
+and there will be a function called deserializeBinary() in the class. it will convert the binary format to the message.
+*/
 message Employees {
-    repeated Employee employees = 1;
+    repeated Employee employees = 1; // repeated means it is an array. it is used to set the array of employees in
 }
 
 
