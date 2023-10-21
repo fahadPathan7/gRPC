@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option java_package = "com.pc.grpc";
+
+service user {
+  rpc RegisterUser(registerNewUser) returns (APIRes); // task 1. to register a new user
+  rpc LoginUser(loginExistingUser) returns (APIRes); // task 2. to login an existing user
+  rpc SetProfile(setProfileInfo) returns (APIRes); // task 3. to set profile info
+  rpc ProfileView(void) returns (profileView); // task 4. to view profile info
+  rpc UpdateProfile(updateProfileInfo) returns (APIRes); // task 5. to update profile info
+}
+
+message registerNewUser {
+  string username = 1;
+  string password = 2;
+}
+
+message loginExistingUser {
+  string username = 1;
+  string password = 2;
+}
+
+message setProfileInfo {
+  string firstName = 1;
+  string lastName = 2;
+  string email = 3;
+  string city = 4;
+}
+
+message profileView {
+  string firstName = 1;
+  string lastName = 2;
+  string email = 3;
+  string city = 4;
+}
+
+message updateProfileInfo {
+  string firstName = 1;
+  string lastName = 2;
+  string email = 3;
+  string city = 4;
+}
+
+message APIRes {
+  int32 responseStatus = 1;
+  string responseMessage = 2;
+}
+
+message void {}
