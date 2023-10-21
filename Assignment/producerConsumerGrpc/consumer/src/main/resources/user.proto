@@ -6,7 +6,7 @@ service user {
   rpc registerUser(RegisterNewUser) returns (APIRes); // task 1. to register a new user
   rpc loginUser(LoginExistingUser) returns (APIRes); // task 2. to login an existing user
   rpc setProfile(SetProfileInfo) returns (APIRes); // task 3. to set profile info
-  rpc userProfileView(Void) returns (ProfileView); // task 4. to view profile info
+  rpc userProfileView(ProfileReq) returns (ProfileView); // task 4. to view profile info
   rpc updateProfile(UpdateProfileInfo) returns (APIRes); // task 5. to update profile info
 }
 
@@ -21,24 +21,31 @@ message LoginExistingUser {
 }
 
 message SetProfileInfo {
-  string firstName = 1;
-  string lastName = 2;
-  string email = 3;
-  string city = 4;
+  string username = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+  string city = 5;
+}
+
+message ProfileReq {
+  string username = 1;
 }
 
 message ProfileView {
-  string firstName = 1;
-  string lastName = 2;
-  string email = 3;
-  string city = 4;
+  string username = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+  string city = 5;
 }
 
 message UpdateProfileInfo {
-  string firstName = 1;
-  string lastName = 2;
-  string email = 3;
-  string city = 4;
+  string username = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+  string city = 5;
 }
 
 message APIRes {

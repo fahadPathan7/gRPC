@@ -1393,41 +1393,51 @@ public final class User {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string username = 1;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string firstName = 2;</code>
      */
     java.lang.String getFirstName();
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     com.google.protobuf.ByteString
         getFirstNameBytes();
 
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     java.lang.String getLastName();
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     com.google.protobuf.ByteString
         getLastNameBytes();
 
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     java.lang.String getCity();
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     com.google.protobuf.ByteString
         getCityBytes();
@@ -1445,6 +1455,7 @@ public final class User {
       super(builder);
     }
     private SetProfileInfo() {
+      username_ = "";
       firstName_ = "";
       lastName_ = "";
       email_ = "";
@@ -1478,22 +1489,28 @@ public final class User {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              firstName_ = s;
+              username_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              lastName_ = s;
+              firstName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              email_ = s;
+              lastName_ = s;
               break;
             }
             case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               city_ = s;
@@ -1531,10 +1548,44 @@ public final class User {
               com.demo.grpc.User.SetProfileInfo.class, com.demo.grpc.User.SetProfileInfo.Builder.class);
     }
 
-    public static final int FIRSTNAME_FIELD_NUMBER = 1;
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 1;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FIRSTNAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object firstName_;
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     public java.lang.String getFirstName() {
       java.lang.Object ref = firstName_;
@@ -1549,7 +1600,7 @@ public final class User {
       }
     }
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     public com.google.protobuf.ByteString
         getFirstNameBytes() {
@@ -1565,10 +1616,10 @@ public final class User {
       }
     }
 
-    public static final int LASTNAME_FIELD_NUMBER = 2;
+    public static final int LASTNAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object lastName_;
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     public java.lang.String getLastName() {
       java.lang.Object ref = lastName_;
@@ -1583,7 +1634,7 @@ public final class User {
       }
     }
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     public com.google.protobuf.ByteString
         getLastNameBytes() {
@@ -1599,10 +1650,10 @@ public final class User {
       }
     }
 
-    public static final int EMAIL_FIELD_NUMBER = 3;
+    public static final int EMAIL_FIELD_NUMBER = 4;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -1617,7 +1668,7 @@ public final class User {
       }
     }
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -1633,10 +1684,10 @@ public final class User {
       }
     }
 
-    public static final int CITY_FIELD_NUMBER = 4;
+    public static final int CITY_FIELD_NUMBER = 5;
     private volatile java.lang.Object city_;
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     public java.lang.String getCity() {
       java.lang.Object ref = city_;
@@ -1651,7 +1702,7 @@ public final class User {
       }
     }
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
@@ -1681,17 +1732,20 @@ public final class User {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+      }
       if (!getFirstNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firstName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, firstName_);
       }
       if (!getLastNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
       }
       if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
       }
       if (!getCityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, city_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, city_);
       }
       unknownFields.writeTo(output);
     }
@@ -1702,17 +1756,20 @@ public final class User {
       if (size != -1) return size;
 
       size = 0;
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+      }
       if (!getFirstNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firstName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, firstName_);
       }
       if (!getLastNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
       }
       if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
       }
       if (!getCityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, city_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, city_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1730,6 +1787,8 @@ public final class User {
       com.demo.grpc.User.SetProfileInfo other = (com.demo.grpc.User.SetProfileInfo) obj;
 
       boolean result = true;
+      result = result && getUsername()
+          .equals(other.getUsername());
       result = result && getFirstName()
           .equals(other.getFirstName());
       result = result && getLastName()
@@ -1749,6 +1808,8 @@ public final class User {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + FIRSTNAME_FIELD_NUMBER;
       hash = (53 * hash) + getFirstName().hashCode();
       hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
@@ -1890,6 +1951,8 @@ public final class User {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        username_ = "";
+
         firstName_ = "";
 
         lastName_ = "";
@@ -1924,6 +1987,7 @@ public final class User {
       @java.lang.Override
       public com.demo.grpc.User.SetProfileInfo buildPartial() {
         com.demo.grpc.User.SetProfileInfo result = new com.demo.grpc.User.SetProfileInfo(this);
+        result.username_ = username_;
         result.firstName_ = firstName_;
         result.lastName_ = lastName_;
         result.email_ = email_;
@@ -1976,6 +2040,10 @@ public final class User {
 
       public Builder mergeFrom(com.demo.grpc.User.SetProfileInfo other) {
         if (other == com.demo.grpc.User.SetProfileInfo.getDefaultInstance()) return this;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
         if (!other.getFirstName().isEmpty()) {
           firstName_ = other.firstName_;
           onChanged();
@@ -2021,9 +2089,78 @@ public final class User {
         return this;
       }
 
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 1;</code>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object firstName_ = "";
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public java.lang.String getFirstName() {
         java.lang.Object ref = firstName_;
@@ -2038,7 +2175,7 @@ public final class User {
         }
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public com.google.protobuf.ByteString
           getFirstNameBytes() {
@@ -2054,7 +2191,7 @@ public final class User {
         }
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder setFirstName(
           java.lang.String value) {
@@ -2067,7 +2204,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder clearFirstName() {
         
@@ -2076,7 +2213,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder setFirstNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2092,7 +2229,7 @@ public final class User {
 
       private java.lang.Object lastName_ = "";
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public java.lang.String getLastName() {
         java.lang.Object ref = lastName_;
@@ -2107,7 +2244,7 @@ public final class User {
         }
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public com.google.protobuf.ByteString
           getLastNameBytes() {
@@ -2123,7 +2260,7 @@ public final class User {
         }
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder setLastName(
           java.lang.String value) {
@@ -2136,7 +2273,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder clearLastName() {
         
@@ -2145,7 +2282,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder setLastNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2161,7 +2298,7 @@ public final class User {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
@@ -2176,7 +2313,7 @@ public final class User {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
@@ -2192,7 +2329,7 @@ public final class User {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder setEmail(
           java.lang.String value) {
@@ -2205,7 +2342,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder clearEmail() {
         
@@ -2214,7 +2351,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
@@ -2230,7 +2367,7 @@ public final class User {
 
       private java.lang.Object city_ = "";
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public java.lang.String getCity() {
         java.lang.Object ref = city_;
@@ -2245,7 +2382,7 @@ public final class User {
         }
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public com.google.protobuf.ByteString
           getCityBytes() {
@@ -2261,7 +2398,7 @@ public final class User {
         }
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder setCity(
           java.lang.String value) {
@@ -2274,7 +2411,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder clearCity() {
         
@@ -2283,7 +2420,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder setCityBytes(
           com.google.protobuf.ByteString value) {
@@ -2349,46 +2486,606 @@ public final class User {
 
   }
 
+  public interface ProfileReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ProfileReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string username = 1;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+  }
+  /**
+   * Protobuf type {@code ProfileReq}
+   */
+  public  static final class ProfileReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ProfileReq)
+      ProfileReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProfileReq.newBuilder() to construct.
+    private ProfileReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProfileReq() {
+      username_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProfileReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.demo.grpc.User.internal_static_ProfileReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.demo.grpc.User.internal_static_ProfileReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.demo.grpc.User.ProfileReq.class, com.demo.grpc.User.ProfileReq.Builder.class);
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 1;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.demo.grpc.User.ProfileReq)) {
+        return super.equals(obj);
+      }
+      com.demo.grpc.User.ProfileReq other = (com.demo.grpc.User.ProfileReq) obj;
+
+      boolean result = true;
+      result = result && getUsername()
+          .equals(other.getUsername());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.demo.grpc.User.ProfileReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.demo.grpc.User.ProfileReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.demo.grpc.User.ProfileReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.demo.grpc.User.ProfileReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ProfileReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ProfileReq)
+        com.demo.grpc.User.ProfileReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.demo.grpc.User.internal_static_ProfileReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.demo.grpc.User.internal_static_ProfileReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.demo.grpc.User.ProfileReq.class, com.demo.grpc.User.ProfileReq.Builder.class);
+      }
+
+      // Construct using com.demo.grpc.User.ProfileReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        username_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.demo.grpc.User.internal_static_ProfileReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.demo.grpc.User.ProfileReq getDefaultInstanceForType() {
+        return com.demo.grpc.User.ProfileReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.demo.grpc.User.ProfileReq build() {
+        com.demo.grpc.User.ProfileReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.demo.grpc.User.ProfileReq buildPartial() {
+        com.demo.grpc.User.ProfileReq result = new com.demo.grpc.User.ProfileReq(this);
+        result.username_ = username_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.demo.grpc.User.ProfileReq) {
+          return mergeFrom((com.demo.grpc.User.ProfileReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.demo.grpc.User.ProfileReq other) {
+        if (other == com.demo.grpc.User.ProfileReq.getDefaultInstance()) return this;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.demo.grpc.User.ProfileReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.demo.grpc.User.ProfileReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 1;</code>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ProfileReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:ProfileReq)
+    private static final com.demo.grpc.User.ProfileReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.demo.grpc.User.ProfileReq();
+    }
+
+    public static com.demo.grpc.User.ProfileReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProfileReq>
+        PARSER = new com.google.protobuf.AbstractParser<ProfileReq>() {
+      @java.lang.Override
+      public ProfileReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProfileReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProfileReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProfileReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.demo.grpc.User.ProfileReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ProfileViewOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ProfileView)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string username = 1;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string firstName = 2;</code>
      */
     java.lang.String getFirstName();
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     com.google.protobuf.ByteString
         getFirstNameBytes();
 
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     java.lang.String getLastName();
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     com.google.protobuf.ByteString
         getLastNameBytes();
 
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     java.lang.String getCity();
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     com.google.protobuf.ByteString
         getCityBytes();
@@ -2406,6 +3103,7 @@ public final class User {
       super(builder);
     }
     private ProfileView() {
+      username_ = "";
       firstName_ = "";
       lastName_ = "";
       email_ = "";
@@ -2439,22 +3137,28 @@ public final class User {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              firstName_ = s;
+              username_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              lastName_ = s;
+              firstName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              email_ = s;
+              lastName_ = s;
               break;
             }
             case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               city_ = s;
@@ -2492,10 +3196,44 @@ public final class User {
               com.demo.grpc.User.ProfileView.class, com.demo.grpc.User.ProfileView.Builder.class);
     }
 
-    public static final int FIRSTNAME_FIELD_NUMBER = 1;
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 1;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FIRSTNAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object firstName_;
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     public java.lang.String getFirstName() {
       java.lang.Object ref = firstName_;
@@ -2510,7 +3248,7 @@ public final class User {
       }
     }
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     public com.google.protobuf.ByteString
         getFirstNameBytes() {
@@ -2526,10 +3264,10 @@ public final class User {
       }
     }
 
-    public static final int LASTNAME_FIELD_NUMBER = 2;
+    public static final int LASTNAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object lastName_;
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     public java.lang.String getLastName() {
       java.lang.Object ref = lastName_;
@@ -2544,7 +3282,7 @@ public final class User {
       }
     }
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     public com.google.protobuf.ByteString
         getLastNameBytes() {
@@ -2560,10 +3298,10 @@ public final class User {
       }
     }
 
-    public static final int EMAIL_FIELD_NUMBER = 3;
+    public static final int EMAIL_FIELD_NUMBER = 4;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -2578,7 +3316,7 @@ public final class User {
       }
     }
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -2594,10 +3332,10 @@ public final class User {
       }
     }
 
-    public static final int CITY_FIELD_NUMBER = 4;
+    public static final int CITY_FIELD_NUMBER = 5;
     private volatile java.lang.Object city_;
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     public java.lang.String getCity() {
       java.lang.Object ref = city_;
@@ -2612,7 +3350,7 @@ public final class User {
       }
     }
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
@@ -2642,17 +3380,20 @@ public final class User {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+      }
       if (!getFirstNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firstName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, firstName_);
       }
       if (!getLastNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
       }
       if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
       }
       if (!getCityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, city_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, city_);
       }
       unknownFields.writeTo(output);
     }
@@ -2663,17 +3404,20 @@ public final class User {
       if (size != -1) return size;
 
       size = 0;
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+      }
       if (!getFirstNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firstName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, firstName_);
       }
       if (!getLastNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
       }
       if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
       }
       if (!getCityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, city_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, city_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2691,6 +3435,8 @@ public final class User {
       com.demo.grpc.User.ProfileView other = (com.demo.grpc.User.ProfileView) obj;
 
       boolean result = true;
+      result = result && getUsername()
+          .equals(other.getUsername());
       result = result && getFirstName()
           .equals(other.getFirstName());
       result = result && getLastName()
@@ -2710,6 +3456,8 @@ public final class User {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + FIRSTNAME_FIELD_NUMBER;
       hash = (53 * hash) + getFirstName().hashCode();
       hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
@@ -2851,6 +3599,8 @@ public final class User {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        username_ = "";
+
         firstName_ = "";
 
         lastName_ = "";
@@ -2885,6 +3635,7 @@ public final class User {
       @java.lang.Override
       public com.demo.grpc.User.ProfileView buildPartial() {
         com.demo.grpc.User.ProfileView result = new com.demo.grpc.User.ProfileView(this);
+        result.username_ = username_;
         result.firstName_ = firstName_;
         result.lastName_ = lastName_;
         result.email_ = email_;
@@ -2937,6 +3688,10 @@ public final class User {
 
       public Builder mergeFrom(com.demo.grpc.User.ProfileView other) {
         if (other == com.demo.grpc.User.ProfileView.getDefaultInstance()) return this;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
         if (!other.getFirstName().isEmpty()) {
           firstName_ = other.firstName_;
           onChanged();
@@ -2982,9 +3737,78 @@ public final class User {
         return this;
       }
 
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 1;</code>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object firstName_ = "";
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public java.lang.String getFirstName() {
         java.lang.Object ref = firstName_;
@@ -2999,7 +3823,7 @@ public final class User {
         }
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public com.google.protobuf.ByteString
           getFirstNameBytes() {
@@ -3015,7 +3839,7 @@ public final class User {
         }
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder setFirstName(
           java.lang.String value) {
@@ -3028,7 +3852,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder clearFirstName() {
         
@@ -3037,7 +3861,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder setFirstNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3053,7 +3877,7 @@ public final class User {
 
       private java.lang.Object lastName_ = "";
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public java.lang.String getLastName() {
         java.lang.Object ref = lastName_;
@@ -3068,7 +3892,7 @@ public final class User {
         }
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public com.google.protobuf.ByteString
           getLastNameBytes() {
@@ -3084,7 +3908,7 @@ public final class User {
         }
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder setLastName(
           java.lang.String value) {
@@ -3097,7 +3921,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder clearLastName() {
         
@@ -3106,7 +3930,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder setLastNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3122,7 +3946,7 @@ public final class User {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
@@ -3137,7 +3961,7 @@ public final class User {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
@@ -3153,7 +3977,7 @@ public final class User {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder setEmail(
           java.lang.String value) {
@@ -3166,7 +3990,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder clearEmail() {
         
@@ -3175,7 +3999,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
@@ -3191,7 +4015,7 @@ public final class User {
 
       private java.lang.Object city_ = "";
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public java.lang.String getCity() {
         java.lang.Object ref = city_;
@@ -3206,7 +4030,7 @@ public final class User {
         }
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public com.google.protobuf.ByteString
           getCityBytes() {
@@ -3222,7 +4046,7 @@ public final class User {
         }
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder setCity(
           java.lang.String value) {
@@ -3235,7 +4059,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder clearCity() {
         
@@ -3244,7 +4068,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder setCityBytes(
           com.google.protobuf.ByteString value) {
@@ -3315,41 +4139,51 @@ public final class User {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string username = 1;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string firstName = 2;</code>
      */
     java.lang.String getFirstName();
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     com.google.protobuf.ByteString
         getFirstNameBytes();
 
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     java.lang.String getLastName();
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     com.google.protobuf.ByteString
         getLastNameBytes();
 
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     java.lang.String getCity();
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     com.google.protobuf.ByteString
         getCityBytes();
@@ -3367,6 +4201,7 @@ public final class User {
       super(builder);
     }
     private UpdateProfileInfo() {
+      username_ = "";
       firstName_ = "";
       lastName_ = "";
       email_ = "";
@@ -3400,22 +4235,28 @@ public final class User {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              firstName_ = s;
+              username_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              lastName_ = s;
+              firstName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              email_ = s;
+              lastName_ = s;
               break;
             }
             case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               city_ = s;
@@ -3453,10 +4294,44 @@ public final class User {
               com.demo.grpc.User.UpdateProfileInfo.class, com.demo.grpc.User.UpdateProfileInfo.Builder.class);
     }
 
-    public static final int FIRSTNAME_FIELD_NUMBER = 1;
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 1;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FIRSTNAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object firstName_;
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     public java.lang.String getFirstName() {
       java.lang.Object ref = firstName_;
@@ -3471,7 +4346,7 @@ public final class User {
       }
     }
     /**
-     * <code>string firstName = 1;</code>
+     * <code>string firstName = 2;</code>
      */
     public com.google.protobuf.ByteString
         getFirstNameBytes() {
@@ -3487,10 +4362,10 @@ public final class User {
       }
     }
 
-    public static final int LASTNAME_FIELD_NUMBER = 2;
+    public static final int LASTNAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object lastName_;
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     public java.lang.String getLastName() {
       java.lang.Object ref = lastName_;
@@ -3505,7 +4380,7 @@ public final class User {
       }
     }
     /**
-     * <code>string lastName = 2;</code>
+     * <code>string lastName = 3;</code>
      */
     public com.google.protobuf.ByteString
         getLastNameBytes() {
@@ -3521,10 +4396,10 @@ public final class User {
       }
     }
 
-    public static final int EMAIL_FIELD_NUMBER = 3;
+    public static final int EMAIL_FIELD_NUMBER = 4;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -3539,7 +4414,7 @@ public final class User {
       }
     }
     /**
-     * <code>string email = 3;</code>
+     * <code>string email = 4;</code>
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -3555,10 +4430,10 @@ public final class User {
       }
     }
 
-    public static final int CITY_FIELD_NUMBER = 4;
+    public static final int CITY_FIELD_NUMBER = 5;
     private volatile java.lang.Object city_;
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     public java.lang.String getCity() {
       java.lang.Object ref = city_;
@@ -3573,7 +4448,7 @@ public final class User {
       }
     }
     /**
-     * <code>string city = 4;</code>
+     * <code>string city = 5;</code>
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
@@ -3603,17 +4478,20 @@ public final class User {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+      }
       if (!getFirstNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firstName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, firstName_);
       }
       if (!getLastNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
       }
       if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
       }
       if (!getCityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, city_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, city_);
       }
       unknownFields.writeTo(output);
     }
@@ -3624,17 +4502,20 @@ public final class User {
       if (size != -1) return size;
 
       size = 0;
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+      }
       if (!getFirstNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firstName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, firstName_);
       }
       if (!getLastNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
       }
       if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
       }
       if (!getCityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, city_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, city_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3652,6 +4533,8 @@ public final class User {
       com.demo.grpc.User.UpdateProfileInfo other = (com.demo.grpc.User.UpdateProfileInfo) obj;
 
       boolean result = true;
+      result = result && getUsername()
+          .equals(other.getUsername());
       result = result && getFirstName()
           .equals(other.getFirstName());
       result = result && getLastName()
@@ -3671,6 +4554,8 @@ public final class User {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + FIRSTNAME_FIELD_NUMBER;
       hash = (53 * hash) + getFirstName().hashCode();
       hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
@@ -3812,6 +4697,8 @@ public final class User {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        username_ = "";
+
         firstName_ = "";
 
         lastName_ = "";
@@ -3846,6 +4733,7 @@ public final class User {
       @java.lang.Override
       public com.demo.grpc.User.UpdateProfileInfo buildPartial() {
         com.demo.grpc.User.UpdateProfileInfo result = new com.demo.grpc.User.UpdateProfileInfo(this);
+        result.username_ = username_;
         result.firstName_ = firstName_;
         result.lastName_ = lastName_;
         result.email_ = email_;
@@ -3898,6 +4786,10 @@ public final class User {
 
       public Builder mergeFrom(com.demo.grpc.User.UpdateProfileInfo other) {
         if (other == com.demo.grpc.User.UpdateProfileInfo.getDefaultInstance()) return this;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
         if (!other.getFirstName().isEmpty()) {
           firstName_ = other.firstName_;
           onChanged();
@@ -3943,9 +4835,78 @@ public final class User {
         return this;
       }
 
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 1;</code>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 1;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object firstName_ = "";
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public java.lang.String getFirstName() {
         java.lang.Object ref = firstName_;
@@ -3960,7 +4921,7 @@ public final class User {
         }
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public com.google.protobuf.ByteString
           getFirstNameBytes() {
@@ -3976,7 +4937,7 @@ public final class User {
         }
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder setFirstName(
           java.lang.String value) {
@@ -3989,7 +4950,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder clearFirstName() {
         
@@ -3998,7 +4959,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string firstName = 1;</code>
+       * <code>string firstName = 2;</code>
        */
       public Builder setFirstNameBytes(
           com.google.protobuf.ByteString value) {
@@ -4014,7 +4975,7 @@ public final class User {
 
       private java.lang.Object lastName_ = "";
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public java.lang.String getLastName() {
         java.lang.Object ref = lastName_;
@@ -4029,7 +4990,7 @@ public final class User {
         }
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public com.google.protobuf.ByteString
           getLastNameBytes() {
@@ -4045,7 +5006,7 @@ public final class User {
         }
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder setLastName(
           java.lang.String value) {
@@ -4058,7 +5019,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder clearLastName() {
         
@@ -4067,7 +5028,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string lastName = 2;</code>
+       * <code>string lastName = 3;</code>
        */
       public Builder setLastNameBytes(
           com.google.protobuf.ByteString value) {
@@ -4083,7 +5044,7 @@ public final class User {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
@@ -4098,7 +5059,7 @@ public final class User {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
@@ -4114,7 +5075,7 @@ public final class User {
         }
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder setEmail(
           java.lang.String value) {
@@ -4127,7 +5088,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder clearEmail() {
         
@@ -4136,7 +5097,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string email = 4;</code>
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
@@ -4152,7 +5113,7 @@ public final class User {
 
       private java.lang.Object city_ = "";
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public java.lang.String getCity() {
         java.lang.Object ref = city_;
@@ -4167,7 +5128,7 @@ public final class User {
         }
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public com.google.protobuf.ByteString
           getCityBytes() {
@@ -4183,7 +5144,7 @@ public final class User {
         }
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder setCity(
           java.lang.String value) {
@@ -4196,7 +5157,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder clearCity() {
         
@@ -4205,7 +5166,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>string city = 4;</code>
+       * <code>string city = 5;</code>
        */
       public Builder setCityBytes(
           com.google.protobuf.ByteString value) {
@@ -5312,6 +6273,11 @@ public final class User {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SetProfileInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ProfileReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ProfileReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ProfileView_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5343,21 +6309,23 @@ public final class User {
       "\n\nuser.proto\"5\n\017RegisterNewUser\022\020\n\010usern" +
       "ame\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"7\n\021LoginExis" +
       "tingUser\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002" +
-      " \001(\t\"R\n\016SetProfileInfo\022\021\n\tfirstName\030\001 \001(" +
-      "\t\022\020\n\010lastName\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\014\n\004ci" +
-      "ty\030\004 \001(\t\"O\n\013ProfileView\022\021\n\tfirstName\030\001 \001" +
-      "(\t\022\020\n\010lastName\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\014\n\004c" +
-      "ity\030\004 \001(\t\"U\n\021UpdateProfileInfo\022\021\n\tfirstN" +
-      "ame\030\001 \001(\t\022\020\n\010lastName\030\002 \001(\t\022\r\n\005email\030\003 \001" +
-      "(\t\022\014\n\004city\030\004 \001(\t\"9\n\006APIRes\022\026\n\016responseSt" +
-      "atus\030\001 \001(\005\022\027\n\017responseMessage\030\002 \001(\t\"\006\n\004V" +
-      "oid2\331\001\n\004user\022)\n\014registerUser\022\020.RegisterN" +
-      "ewUser\032\007.APIRes\022(\n\tloginUser\022\022.LoginExis" +
-      "tingUser\032\007.APIRes\022&\n\nsetProfile\022\017.SetPro" +
-      "fileInfo\032\007.APIRes\022&\n\017userProfileView\022\005.V" +
-      "oid\032\014.ProfileView\022,\n\rupdateProfile\022\022.Upd" +
-      "ateProfileInfo\032\007.APIResB\017\n\rcom.demo.grpc" +
-      "b\006proto3"
+      " \001(\t\"d\n\016SetProfileInfo\022\020\n\010username\030\001 \001(\t" +
+      "\022\021\n\tfirstName\030\002 \001(\t\022\020\n\010lastName\030\003 \001(\t\022\r\n" +
+      "\005email\030\004 \001(\t\022\014\n\004city\030\005 \001(\t\"\036\n\nProfileReq" +
+      "\022\020\n\010username\030\001 \001(\t\"a\n\013ProfileView\022\020\n\010use" +
+      "rname\030\001 \001(\t\022\021\n\tfirstName\030\002 \001(\t\022\020\n\010lastNa" +
+      "me\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\014\n\004city\030\005 \001(\t\"g\n" +
+      "\021UpdateProfileInfo\022\020\n\010username\030\001 \001(\t\022\021\n\t" +
+      "firstName\030\002 \001(\t\022\020\n\010lastName\030\003 \001(\t\022\r\n\005ema" +
+      "il\030\004 \001(\t\022\014\n\004city\030\005 \001(\t\"9\n\006APIRes\022\026\n\016resp" +
+      "onseStatus\030\001 \001(\005\022\027\n\017responseMessage\030\002 \001(" +
+      "\t\"\006\n\004Void2\337\001\n\004user\022)\n\014registerUser\022\020.Reg" +
+      "isterNewUser\032\007.APIRes\022(\n\tloginUser\022\022.Log" +
+      "inExistingUser\032\007.APIRes\022&\n\nsetProfile\022\017." +
+      "SetProfileInfo\032\007.APIRes\022,\n\017userProfileVi" +
+      "ew\022\013.ProfileReq\032\014.ProfileView\022,\n\rupdateP" +
+      "rofile\022\022.UpdateProfileInfo\032\007.APIResB\017\n\rc" +
+      "om.demo.grpcb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5388,27 +6356,33 @@ public final class User {
     internal_static_SetProfileInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetProfileInfo_descriptor,
-        new java.lang.String[] { "FirstName", "LastName", "Email", "City", });
-    internal_static_ProfileView_descriptor =
+        new java.lang.String[] { "Username", "FirstName", "LastName", "Email", "City", });
+    internal_static_ProfileReq_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_ProfileReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ProfileReq_descriptor,
+        new java.lang.String[] { "Username", });
+    internal_static_ProfileView_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_ProfileView_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProfileView_descriptor,
-        new java.lang.String[] { "FirstName", "LastName", "Email", "City", });
+        new java.lang.String[] { "Username", "FirstName", "LastName", "Email", "City", });
     internal_static_UpdateProfileInfo_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_UpdateProfileInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateProfileInfo_descriptor,
-        new java.lang.String[] { "FirstName", "LastName", "Email", "City", });
+        new java.lang.String[] { "Username", "FirstName", "LastName", "Email", "City", });
     internal_static_APIRes_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_APIRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_APIRes_descriptor,
         new java.lang.String[] { "ResponseStatus", "ResponseMessage", });
     internal_static_Void_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_Void_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Void_descriptor,

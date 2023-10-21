@@ -123,28 +123,28 @@ public final class userGrpc {
      return getSetProfileMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.demo.grpc.User.Void,
+  private static volatile io.grpc.MethodDescriptor<com.demo.grpc.User.ProfileReq,
       com.demo.grpc.User.ProfileView> getUserProfileViewMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "userProfileView",
-      requestType = com.demo.grpc.User.Void.class,
+      requestType = com.demo.grpc.User.ProfileReq.class,
       responseType = com.demo.grpc.User.ProfileView.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.demo.grpc.User.Void,
+  public static io.grpc.MethodDescriptor<com.demo.grpc.User.ProfileReq,
       com.demo.grpc.User.ProfileView> getUserProfileViewMethod() {
-    io.grpc.MethodDescriptor<com.demo.grpc.User.Void, com.demo.grpc.User.ProfileView> getUserProfileViewMethod;
+    io.grpc.MethodDescriptor<com.demo.grpc.User.ProfileReq, com.demo.grpc.User.ProfileView> getUserProfileViewMethod;
     if ((getUserProfileViewMethod = userGrpc.getUserProfileViewMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getUserProfileViewMethod = userGrpc.getUserProfileViewMethod) == null) {
           userGrpc.getUserProfileViewMethod = getUserProfileViewMethod = 
-              io.grpc.MethodDescriptor.<com.demo.grpc.User.Void, com.demo.grpc.User.ProfileView>newBuilder()
+              io.grpc.MethodDescriptor.<com.demo.grpc.User.ProfileReq, com.demo.grpc.User.ProfileView>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "userProfileView"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.demo.grpc.User.Void.getDefaultInstance()))
+                  com.demo.grpc.User.ProfileReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.demo.grpc.User.ProfileView.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("userProfileView"))
@@ -249,7 +249,7 @@ public final class userGrpc {
      * task 4. to view profile info
      * </pre>
      */
-    public void userProfileView(com.demo.grpc.User.Void request,
+    public void userProfileView(com.demo.grpc.User.ProfileReq request,
         io.grpc.stub.StreamObserver<com.demo.grpc.User.ProfileView> responseObserver) {
       asyncUnimplementedUnaryCall(getUserProfileViewMethod(), responseObserver);
     }
@@ -291,7 +291,7 @@ public final class userGrpc {
             getUserProfileViewMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.demo.grpc.User.Void,
+                com.demo.grpc.User.ProfileReq,
                 com.demo.grpc.User.ProfileView>(
                   this, METHODID_USER_PROFILE_VIEW)))
           .addMethod(
@@ -361,7 +361,7 @@ public final class userGrpc {
      * task 4. to view profile info
      * </pre>
      */
-    public void userProfileView(com.demo.grpc.User.Void request,
+    public void userProfileView(com.demo.grpc.User.ProfileReq request,
         io.grpc.stub.StreamObserver<com.demo.grpc.User.ProfileView> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUserProfileViewMethod(), getCallOptions()), request, responseObserver);
@@ -432,7 +432,7 @@ public final class userGrpc {
      * task 4. to view profile info
      * </pre>
      */
-    public com.demo.grpc.User.ProfileView userProfileView(com.demo.grpc.User.Void request) {
+    public com.demo.grpc.User.ProfileView userProfileView(com.demo.grpc.User.ProfileReq request) {
       return blockingUnaryCall(
           getChannel(), getUserProfileViewMethod(), getCallOptions(), request);
     }
@@ -505,7 +505,7 @@ public final class userGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.demo.grpc.User.ProfileView> userProfileView(
-        com.demo.grpc.User.Void request) {
+        com.demo.grpc.User.ProfileReq request) {
       return futureUnaryCall(
           getChannel().newCall(getUserProfileViewMethod(), getCallOptions()), request);
     }
@@ -558,7 +558,7 @@ public final class userGrpc {
               (io.grpc.stub.StreamObserver<com.demo.grpc.User.APIRes>) responseObserver);
           break;
         case METHODID_USER_PROFILE_VIEW:
-          serviceImpl.userProfileView((com.demo.grpc.User.Void) request,
+          serviceImpl.userProfileView((com.demo.grpc.User.ProfileReq) request,
               (io.grpc.stub.StreamObserver<com.demo.grpc.User.ProfileView>) responseObserver);
           break;
         case METHODID_UPDATE_PROFILE:
