@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option java_package = "com.demo.grpc";
+
+service user {
+  rpc login(LoginReq) returns (APIRes);
+  rpc logout(Empty) returns (APIRes);
+  rpc register(RegisterReq) returns (APIRes);
+  rpc getProfile(ProfileReq) returns (ProfileRes); // New RPC for getting the user's profile
+  rpc updateProfile(UpdateProfileReq) returns (APIRes); // New RPC for updating the user's profile
+}
+
+message LoginReq {
+  string username = 1;
+  string password = 2;
+}
+
+message APIRes {
+  string message = 1;
+  int32 resCode = 2;
+}
+
+message Empty {
+}
+
+message RegisterReq {
+  string username = 1;
+  string password = 2;
+  string name = 3;
+  string email = 4;
+  string bio = 5;
+}
+
+// New message for getting the user's profile
+message ProfileReq {
+  string username = 1;
+  string email = 2;
+  string bio = 3;
+  string password = 4;
+}
+
+// New message for returning the user's profile
+message ProfileRes {
+  string username = 1;
+  string email = 2;
+  string bio = 3;
+  string password = 4;
+}
+
+// New message for updating the user's profile
+message UpdateProfileReq {
+  string username = 1;
+  string email = 2;
+  string bio = 3;
+  string password = 4;
+}
