@@ -1,40 +1,40 @@
 syntax = "proto3";
 
-option java_package = "com.pc.grpc";
+option java_package = "com.demo.grpc";
 
 service user {
-  rpc RegisterUser(registerNewUser) returns (APIRes); // task 1. to register a new user
-  rpc LoginUser(loginExistingUser) returns (APIRes); // task 2. to login an existing user
-  rpc SetProfile(setProfileInfo) returns (APIRes); // task 3. to set profile info
-  rpc ProfileView(void) returns (profileView); // task 4. to view profile info
-  rpc UpdateProfile(updateProfileInfo) returns (APIRes); // task 5. to update profile info
+  rpc registerUser(RegisterNewUser) returns (APIRes); // task 1. to register a new user
+  rpc loginUser(LoginExistingUser) returns (APIRes); // task 2. to login an existing user
+  rpc setProfile(SetProfileInfo) returns (APIRes); // task 3. to set profile info
+  rpc userProfileView(Void) returns (ProfileView); // task 4. to view profile info
+  rpc updateProfile(UpdateProfileInfo) returns (APIRes); // task 5. to update profile info
 }
 
-message registerNewUser {
+message RegisterNewUser {
   string username = 1;
   string password = 2;
 }
 
-message loginExistingUser {
+message LoginExistingUser {
   string username = 1;
   string password = 2;
 }
 
-message setProfileInfo {
+message SetProfileInfo {
   string firstName = 1;
   string lastName = 2;
   string email = 3;
   string city = 4;
 }
 
-message profileView {
+message ProfileView {
   string firstName = 1;
   string lastName = 2;
   string email = 3;
   string city = 4;
 }
 
-message updateProfileInfo {
+message UpdateProfileInfo {
   string firstName = 1;
   string lastName = 2;
   string email = 3;
@@ -46,4 +46,4 @@ message APIRes {
   string responseMessage = 2;
 }
 
-message void {}
+message Void {}
