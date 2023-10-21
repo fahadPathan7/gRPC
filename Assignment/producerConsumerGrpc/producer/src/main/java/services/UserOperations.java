@@ -19,6 +19,19 @@ public class UserOperations extends userGrpc.userImplBase {
         String username = request.getUsername();
         String passwordBase = request.getPassword();
 
+        try {
+            // check if the user already exists
+            String hashedPassword = checkUsersExistence(username);
+
+            if (hashedPassword != null) {
+                // user already exists
+                responseObserver.onNext(User.APIRes.newBuilder().setResponseStatus(400).setResponseMessage("User already exists!").build());
+                logger.info(username + " already exists!\nPlease try login!");
+                return;
+            }
+        } catch (Exception e){}
+
+
         // encrypting password
         String salt = BCrypt.gensalt();
         String password = BCrypt.hashpw(passwordBase, salt);
@@ -29,15 +42,6 @@ public class UserOperations extends userGrpc.userImplBase {
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                 preparedStatement.setString(1, username);
                 preparedStatement.setString(2, password);
-
-                // check if the user already exists
-                String hashedPassword = checkUsersExistence(username);
-
-                if (hashedPassword != null) {
-                    // user already exists
-                    responseObserver.onNext(User.APIRes.newBuilder().setResponseStatus(400).setResponseMessage("User already exists!").build());
-                    logger.info(username + " already exists!\nPlease try login!");
-                }
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 if (rowsAffected > 0) {
