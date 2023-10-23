@@ -43,6 +43,7 @@ CREATE TABLE profiles (
   email VARCHAR(255),
   city VARCHAR(255)
 );
+```
 
 
 ### Project Setup
